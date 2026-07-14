@@ -6,246 +6,24 @@
   <title>You'Groupe — Holding tech • You'Com, You'SaaS &amp; les entreprises de demain</title>
   <meta name="description" content="You'Groupe est la holding qui réunit et fait grandir des entreprises tech ambitieuses : aujourd'hui You'Com et You'SaaS, demain de nouvelles aventures." />
   <meta name="theme-color" content="#4f46e5" />
-
   <meta property="og:title" content="You'Groupe" />
   <meta property="og:description" content="Un groupe, plusieurs ambitions. La holding derrière You'Com et You'SaaS." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://yougroupe.com" />
-
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --bg: #ffffff;
-      --paper: #faf9ff;
-      --soft: #f5f4ff;
-      --tint: #ecebff;
-      --ice: #e0e7ff;
-
-      --brand: #4f46e5;   /* indigo-600 — signature You'Groupe */
-      --brand-2: #6366f1;
-      --sky: #8b5cf6;     /* violet accent */
-
-      /* couleurs des marques du groupe */
-      --youcom: #2563eb;
-      --yousaas: #22c55e;
-
-      --ink: #0d0f2b;
-      --ink-2: #22254f;
-      --muted: #5c5f83;
-
-      --line: rgba(13, 15, 43, 0.08);
-      --line-strong: rgba(13, 15, 43, 0.14);
-      --radius: 22px;
-      --ease: cubic-bezier(.2, .7, .2, 1);
-      --shadow: 0 24px 60px -28px rgba(13, 15, 43, 0.28);
-      --shadow-sm: 0 12px 30px -18px rgba(13, 15, 43, 0.22);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
-    body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-      color: var(--ink);
-      background: var(--bg);
-      line-height: 1.6;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: inherit; text-decoration: none; }
-    ::selection { background: var(--brand); color: #fff; }
-
-    .wrap { width: min(1140px, 100% - 40px); margin-inline: auto; }
-
-    /* serif italic accent — signature de la DA You' */
-    .serif {
-      font-family: "Instrument Serif", Georgia, serif;
-      font-style: italic;
-      font-weight: 400;
-      background: linear-gradient(135deg, var(--brand), var(--sky));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-      letter-spacing: 0;
-    }
-    .eyebrow {
-      font-family: "JetBrains Mono", ui-monospace, monospace;
-      font-weight: 500; font-size: 0.75rem; letter-spacing: 0.16em; text-transform: uppercase;
-      color: var(--brand);
-    }
-    .apos { color: var(--brand); }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 15px 28px; border-radius: 999px; font-size: 1rem; font-weight: 500;
-      border: 1px solid transparent; cursor: pointer; transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .2s, border-color .2s; white-space: nowrap;
-    }
-    .btn-primary { color: #fff; background: var(--brand); box-shadow: 0 14px 30px -12px rgba(79, 70, 229, .55); }
-    .btn-primary:hover { transform: translateY(-2px); background: var(--brand-2); box-shadow: 0 20px 38px -12px rgba(79, 70, 229, .6); }
-    .btn-ghost { background: var(--bg); border-color: var(--line-strong); color: var(--ink); }
-    .btn-ghost:hover { transform: translateY(-2px); border-color: var(--brand); color: var(--brand); }
-
-    /* Header */
-    header {
-      position: sticky; top: 0; z-index: 50; backdrop-filter: blur(14px);
-      background: color-mix(in srgb, var(--bg) 82%, transparent);
-      border-bottom: 1px solid transparent; transition: border-color .3s;
-    }
-    header.scrolled { border-bottom-color: var(--line); }
-    .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-    .brand { font-weight: 800; font-size: 1.28rem; letter-spacing: -.03em; display: inline-flex; align-items: center; }
-    .nav-links { display: flex; align-items: center; gap: 32px; }
-    .nav-links a.link { color: var(--muted); font-size: 0.95rem; font-weight: 500; transition: color .2s; }
-    .nav-links a.link:hover { color: var(--ink); }
-    .menu-btn { display: none; background: none; border: 0; color: var(--ink); cursor: pointer; padding: 8px; }
-
-    /* Hero */
-    .hero { position: relative; padding: clamp(64px, 12vw, 132px) 0 clamp(48px, 8vw, 88px); text-align: center; }
-    .halo { position: absolute; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; }
-    .halo::before {
-      content: ""; position: absolute; width: 900px; height: 560px; left: 50%; top: -220px; transform: translateX(-50%);
-      background: radial-gradient(closest-side, var(--tint), transparent 72%);
-      opacity: .9;
-    }
-    .hero h1 {
-      font-weight: 800; letter-spacing: -.045em; line-height: .98;
-      font-size: clamp(2.6rem, 7.4vw, 5.2rem); margin: 22px auto 0; max-width: 15ch; color: var(--ink);
-    }
-    .hero h1 .serif { font-size: 1.04em; letter-spacing: -.01em; }
-    .hero p.lede { max-width: 54ch; margin: 24px auto 0; color: var(--muted); font-size: clamp(1.05rem, 2.3vw, 1.28rem); }
-    .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 36px; }
-
-    /* Org diagram */
-    .org { margin: clamp(52px, 8vw, 84px) auto 0; max-width: 720px; }
-    .org-top { display: flex; justify-content: center; }
-    .node {
-      border: 1px solid var(--line); border-radius: 16px; padding: 15px 22px; background: var(--bg);
-      display: inline-flex; flex-direction: column; align-items: center; gap: 3px; box-shadow: var(--shadow-sm); min-width: 150px;
-    }
-    .node .n-name { font-weight: 800; font-size: 1.02rem; letter-spacing: -.02em; }
-    .node .node-logo { width: 20px; height: 20px; object-fit: contain; margin-bottom: 3px; }
-    .node .n-role { font-family: "JetBrains Mono", monospace; font-size: 0.66rem; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; }
-    .node.root { background: linear-gradient(135deg, var(--brand), var(--sky)); border: 0; color: #fff; box-shadow: 0 20px 44px -18px rgba(79,70,229,.55); }
-    .node.root .n-role { color: rgba(255,255,255,.85); }
-    .connector { width: 2px; height: 32px; margin: 0 auto; background: linear-gradient(var(--line-strong), var(--line)); }
-    .org-children { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; position: relative; }
-    .org-children::before { content: ""; position: absolute; top: -16px; left: 16.66%; right: 16.66%; height: 2px; background: var(--line); }
-    .child { position: relative; }
-    .child::before { content: ""; position: absolute; top: -16px; left: 50%; width: 2px; height: 16px; background: var(--line); }
-    .child .node { display: flex; width: 100%; }
-    .child.c-youcom .n-name { color: var(--youcom); }
-    .child.c-yousaas .n-name { color: var(--yousaas); }
-    .child.future .node { border-style: dashed; background: var(--soft); box-shadow: none; }
-    .child.future .n-name { color: var(--muted); }
-
-    /* Sections */
-    section.block { padding: clamp(60px, 9vw, 116px) 0; }
-    .section-head { max-width: 660px; margin: 0 auto 52px; text-align: center; }
-    .section-head h2 {
-      font-weight: 800; letter-spacing: -.04em; line-height: 1.02;
-      font-size: clamp(1.9rem, 4.6vw, 3rem); margin: 14px 0 0; color: var(--ink);
-    }
-    .section-head p { color: var(--muted); margin: 16px auto 0; font-size: 1.1rem; max-width: 52ch; }
-
-    /* Stats */
-    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 22px; text-align: center; }
-    .stat b {
-      font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
-      font-size: clamp(2.6rem, 6vw, 3.6rem); display: block; line-height: 1;
-      background: linear-gradient(135deg, var(--brand), var(--sky));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .stat span { color: var(--muted); font-size: 0.94rem; margin-top: 8px; display: block; }
-
-    /* Companies */
-    .companies { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 22px; }
-    .company {
-      --c: var(--brand);
-      display: flex; flex-direction: column; padding: 30px; border-radius: var(--radius);
-      border: 1px solid var(--line); background: var(--bg); box-shadow: var(--shadow-sm);
-      transition: transform .3s var(--ease), border-color .3s, box-shadow .3s;
-    }
-    .company:hover { transform: translateY(-5px); border-color: color-mix(in srgb, var(--c) 45%, var(--line)); box-shadow: var(--shadow); }
-    .company .badge {
-      width: 56px; height: 56px; border-radius: 15px; display: grid; place-items: center; margin-bottom: 22px;
-      font-weight: 800; font-size: 1.5rem; color: #fff; letter-spacing: -.03em;
-      background: var(--c); box-shadow: 0 12px 26px -12px var(--c);
-    }
-    .company.c-youcom { --c: var(--youcom); }
-    .company.c-yousaas { --c: var(--yousaas); }
-    .company .badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
-    .company.c-youcom .badge, .company.c-yousaas .badge {
-      background: #fff; border: 1px solid var(--line); padding: 9px; box-shadow: 0 10px 24px -14px var(--c);
-    }
-    .company.soon .badge { background: var(--soft); color: var(--muted); border: 1px dashed var(--line-strong); box-shadow: none; }
-    .company .tag { font-family: "JetBrains Mono", monospace; font-size: 0.72rem; font-weight: 500; color: var(--c); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px; }
-    .company.soon .tag { color: var(--muted); }
-    .company h3 { margin: 0 0 8px; font-size: 1.45rem; font-weight: 800; letter-spacing: -.03em; }
-    .company p { margin: 0 0 22px; color: var(--muted); font-size: 0.98rem; flex: 1; }
-    .company .go { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 0.94rem; color: var(--c); }
-    .company .go svg { transition: transform .2s var(--ease); }
-    .company:hover .go svg { transform: translateX(4px); }
-    .company.soon .go { color: var(--muted); }
-
-    /* Values */
-    .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
-    .value { padding: 28px; border-radius: var(--radius); border: 1px solid var(--line); background: var(--bg); transition: transform .3s var(--ease), box-shadow .3s; }
-    .value:hover { transform: translateY(-4px); box-shadow: var(--shadow-sm); }
-    .value .ico { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; margin-bottom: 18px; background: var(--tint); color: var(--brand); }
-    .value .ico svg { width: 22px; height: 22px; stroke: currentColor; }
-    .value h3 { margin: 0 0 8px; font-size: 1.16rem; font-weight: 700; letter-spacing: -.02em; }
-    .value p { margin: 0; color: var(--muted); font-size: 0.96rem; }
-
-    /* CTA band */
-    .cta-band {
-      position: relative; overflow: hidden; border-radius: 30px; padding: clamp(46px, 7vw, 78px) 28px; text-align: center;
-      background: linear-gradient(135deg, var(--tint), #fff 55%, color-mix(in srgb, var(--sky) 16%, #fff));
-      border: 1px solid var(--line);
-    }
-    .cta-band h2 { font-weight: 800; letter-spacing: -.04em; font-size: clamp(1.9rem, 4.6vw, 3rem); margin: 0 auto; max-width: 20ch; color: var(--ink); }
-    .cta-band p { color: var(--muted); margin: 16px auto 0; max-width: 48ch; font-size: 1.08rem; }
-    .cta-band .cta-row { margin-top: 30px; }
-
-    /* Footer */
-    footer { border-top: 1px solid var(--line); padding: 46px 0; }
-    .foot { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; }
-    .foot .brand { font-size: 1.15rem; }
-    .foot-links { display: flex; gap: 26px; flex-wrap: wrap; }
-    .foot-links a { color: var(--muted); font-size: 0.92rem; transition: color .2s; }
-    .foot-links a:hover { color: var(--ink); }
-    .foot .copy { color: var(--muted); font-size: 0.85rem; width: 100%; text-align: center; margin-top: 8px; }
-
-    /* Reveal */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-    .reveal.in { opacity: 1; transform: none; }
-    @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } html { scroll-behavior: auto; } }
-
-    /* Responsive */
-    @media (max-width: 760px) {
-      .nav-links { display: none; }
-      .menu-btn { display: inline-flex; }
-      .org-children { grid-template-columns: 1fr; gap: 24px; }
-      .org-children::before, .child::before { display: none; }
-      .nav-links.open {
-        display: flex; position: absolute; top: 70px; left: 0; right: 0; flex-direction: column; align-items: stretch;
-        gap: 6px; padding: 18px 20px 24px; background: var(--bg); border-bottom: 1px solid var(--line);
-      }
-      .nav-links.open a.link { padding: 10px 6px; }
-      .nav-links.open .btn { justify-content: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
   <header id="hdr">
     <div class="wrap nav">
-      <a class="brand" href="#top">You<span class="apos">'</span>Groupe</a>
+      <a class="brand" href="/">You<span class="apos">'</span>Groupe</a>
       <nav class="nav-links" id="navlinks">
-        <a class="link" href="#groupe">Le groupe</a>
-        <a class="link" href="#entreprises">Nos entreprises</a>
-        <a class="link" href="#vision">Vision</a>
-        <a class="btn btn-primary" href="#contact">Nous contacter</a>
+        <a class="link active" href="/">Accueil</a>
+        <a class="link" href="/entreprises.html">Nos entreprises</a>
+        <a class="link" href="/vision.html">Vision</a>
+        <a class="btn btn-primary" href="/contact.html">Nous contacter</a>
       </nav>
       <button class="menu-btn" id="menuBtn" aria-label="Menu" aria-expanded="false">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -253,7 +31,7 @@
     </div>
   </header>
 
-  <main id="top">
+  <main>
     <!-- HERO -->
     <section class="hero">
       <div class="halo" aria-hidden="true"></div>
@@ -262,21 +40,20 @@
         <h1 class="reveal">Un groupe,<br /><span class="serif">plusieurs ambitions</span>.</h1>
         <p class="lede reveal">You'Groupe réunit et fait grandir des entreprises tech ambitieuses. Aujourd'hui <strong>You'Com</strong> et <strong>You'SaaS</strong> — demain, de nouvelles aventures sous une même vision.</p>
         <div class="cta-row reveal">
-          <a class="btn btn-primary" href="#entreprises">Découvrir le groupe
+          <a class="btn btn-primary" href="/entreprises.html">Découvrir nos entreprises
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>
-          <a class="btn btn-ghost" href="#contact">Nous contacter</a>
+          <a class="btn btn-ghost" href="/contact.html">Nous contacter</a>
         </div>
 
-        <!-- Org diagram -->
         <div class="org reveal" aria-label="Structure du groupe">
           <div class="org-top">
             <div class="node root"><span class="n-name">You'Groupe</span><span class="n-role">Holding</span></div>
           </div>
           <div class="connector"></div>
           <div class="org-children">
-            <div class="child c-youcom"><div class="node"><img class="node-logo" src="assets/youcom-logo.png" alt="" /><span class="n-name">You'Com</span><span class="n-role">Entreprise</span></div></div>
-            <div class="child c-yousaas"><div class="node"><img class="node-logo" src="assets/yousaas-logo.png" alt="" /><span class="n-name">You'SaaS</span><span class="n-role">Entreprise</span></div></div>
+            <div class="child c-youcom"><div class="node"><img class="node-logo" src="/assets/youcom-logo.png" alt="" /><span class="n-name">You'Com</span><span class="n-role">Entreprise</span></div></div>
+            <div class="child c-yousaas"><div class="node"><img class="node-logo" src="/assets/yousaas-logo.png" alt="" /><span class="n-name">You'SaaS</span><span class="n-role">Entreprise</span></div></div>
             <div class="child future"><div class="node"><span class="n-name">Demain +</span><span class="n-role">À venir</span></div></div>
           </div>
         </div>
@@ -284,7 +61,7 @@
     </section>
 
     <!-- LE GROUPE -->
-    <section class="block" id="groupe" style="background:var(--paper)">
+    <section class="block bg-paper" id="groupe">
       <div class="wrap">
         <div class="section-head reveal">
           <span class="eyebrow">Le groupe</span>
@@ -300,8 +77,8 @@
       </div>
     </section>
 
-    <!-- NOS ENTREPRISES -->
-    <section class="block" id="entreprises">
+    <!-- TEASER ENTREPRISES -->
+    <section class="block">
       <div class="wrap">
         <div class="section-head reveal">
           <span class="eyebrow">Nos entreprises</span>
@@ -309,82 +86,51 @@
           <p>Chaque entreprise garde son identité et son autonomie — réunies par une même exigence de qualité.</p>
         </div>
         <div class="companies">
-          <a class="company c-youcom reveal" href="https://youcom.business" target="_blank" rel="noopener">
-            <div class="badge"><img src="assets/youcom-logo.png" alt="Logo You'Com" /></div>
+          <a class="company c-youcom reveal" href="/youcom.html">
+            <div class="badge"><img src="/assets/youcom-logo.png" alt="Logo You'Com" /></div>
             <span class="tag">Studio B2B · Communication</span>
             <h3>You'Com</h3>
-            <p>Le studio dédié à la communication, au SaaS et à la croissance des entreprises B2B. Des produits pensés pour être visibles, professionnels et efficaces.</p>
-            <span class="go">Visiter le site
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            <p>Studio B2B dédié au SaaS, à la communication et à la croissance des entreprises.</p>
+            <span class="go">Découvrir You'Com
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </span>
           </a>
-          <a class="company c-yousaas reveal" href="https://yousaas.business" target="_blank" rel="noopener">
-            <div class="badge"><img src="assets/yousaas-logo.png" alt="Logo You'SaaS" /></div>
+          <a class="company c-yousaas reveal" href="/yousaas.html">
+            <div class="badge"><img src="/assets/yousaas-logo.png" alt="Logo You'SaaS" /></div>
             <span class="tag">Studio SaaS · IA &amp; Automatisation</span>
             <h3>You'SaaS</h3>
-            <p>Le studio logiciel du groupe : développement sur-mesure, IA et automatisation. Des applications SaaS modernes qui répondent à de vrais besoins métier.</p>
-            <span class="go">Visiter le site
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+            <p>Studio logiciel spécialisé dans le développement sur-mesure, l'IA et l'automatisation.</p>
+            <span class="go">Découvrir You'SaaS
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </span>
           </a>
           <div class="company soon reveal">
             <div class="badge">+</div>
             <span class="tag">Prochainement</span>
             <h3>Bientôt</h3>
-            <p>De nouvelles entreprises rejoindront le groupe pour élargir nos horizons. Une idée, un projet à faire grandir ? Parlons-en.</p>
-            <span class="go">Rejoindre l'aventure
+            <p>De nouvelles entreprises rejoindront le groupe pour élargir nos horizons.</p>
+            <a class="go" href="/contact.html">Rejoindre l'aventure
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-            </span>
+            </a>
           </div>
+        </div>
+        <div class="cta-row reveal" style="margin-top:40px">
+          <a class="btn btn-ghost" href="/entreprises.html">Voir toutes nos entreprises</a>
         </div>
       </div>
     </section>
 
-    <!-- VISION -->
-    <section class="block" id="vision" style="background:var(--soft)">
-      <div class="wrap">
-        <div class="section-head reveal">
-          <span class="eyebrow">Vision &amp; valeurs</span>
-          <h2>Ce qui <span class="serif">nous réunit</span></h2>
-          <p>Un cap clair, partagé par toutes les entreprises du groupe.</p>
-        </div>
-        <div class="values">
-          <div class="value reveal">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
-            <h3>Bâtir sur le long terme</h3>
-            <p>Nous construisons des entreprises pour durer, pas pour un cycle. La solidité prime sur l'effet de mode.</p>
-          </div>
-          <div class="value reveal">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-            <h3>La force du collectif</h3>
-            <p>Chaque marque profite des talents, des outils et de l'expérience partagés au sein du groupe.</p>
-          </div>
-          <div class="value reveal">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 15 2 5 3-3 5 2-2-5 3-3-5-2 3-3-5 2-3-3-2 5-5 2 2 5-3 3 5-2z"/></svg></div>
-            <h3>Indépendance des marques</h3>
-            <p>Chaque entreprise garde son identité et sa liberté. Le groupe accompagne, il n'uniformise pas.</p>
-          </div>
-          <div class="value reveal">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-            <h3>Ambition &amp; exécution</h3>
-            <p>De grandes idées, livrées vite et bien. Nous privilégions l'action et la qualité du produit.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT / CTA -->
-    <section class="block" id="contact">
+    <!-- CTA -->
+    <section class="block bg-soft">
       <div class="wrap">
         <div class="cta-band reveal">
           <span class="eyebrow">Contact</span>
           <h2 style="margin-top:14px">Construisons <span class="serif">la suite</span> ensemble</h2>
           <p>Une question, un projet, une envie de rejoindre le groupe ? L'équipe You'Groupe vous répond.</p>
           <div class="cta-row">
-            <a class="btn btn-primary" href="mailto:contact@yougroupe.com">Écrivez-nous
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM22 6l-10 7L2 6"/></svg>
+            <a class="btn btn-primary" href="/contact.html">Nous contacter
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
             </a>
-            <a class="btn btn-ghost" href="https://youcom.business" target="_blank" rel="noopener">Voir You'Com</a>
           </div>
         </div>
       </div>
@@ -393,39 +139,18 @@
 
   <footer>
     <div class="wrap foot">
-      <a class="brand" href="#top">You<span class="apos">'</span>Groupe</a>
+      <a class="brand" href="/">You<span class="apos">'</span>Groupe</a>
       <nav class="foot-links">
-        <a href="#groupe">Le groupe</a>
-        <a href="#entreprises">Nos entreprises</a>
-        <a href="#vision">Vision</a>
-        <a href="mailto:contact@yougroupe.com">Contact</a>
+        <a href="/entreprises.html">Nos entreprises</a>
+        <a href="/youcom.html">You'Com</a>
+        <a href="/yousaas.html">You'SaaS</a>
+        <a href="/vision.html">Vision</a>
+        <a href="/contact.html">Contact</a>
       </nav>
       <div class="copy">© 2026 You'Groupe — Holding réunissant You'Com, You'SaaS et les entreprises de demain.</div>
     </div>
   </footer>
 
-  <script>
-    const hdr = document.getElementById('hdr');
-    const onScroll = () => hdr.classList.toggle('scrolled', window.scrollY > 8);
-    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
-
-    const menuBtn = document.getElementById('menuBtn');
-    const navlinks = document.getElementById('navlinks');
-    menuBtn.addEventListener('click', () => {
-      const open = navlinks.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
-    navlinks.addEventListener('click', (e) => {
-      if (e.target.closest('a')) { navlinks.classList.remove('open'); menuBtn.setAttribute('aria-expanded', 'false'); }
-    });
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach((el, i) => {
-      el.style.transitionDelay = Math.min(i % 6, 5) * 55 + 'ms';
-      io.observe(el);
-    });
-  </script>
+  <script src="/app.js"></script>
 </body>
 </html>
