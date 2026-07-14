@@ -125,6 +125,7 @@
       display: inline-flex; flex-direction: column; align-items: center; gap: 3px; box-shadow: var(--shadow-sm); min-width: 150px;
     }
     .node .n-name { font-weight: 800; font-size: 1.02rem; letter-spacing: -.02em; }
+    .node .node-logo { width: 20px; height: 20px; object-fit: contain; margin-bottom: 3px; }
     .node .n-role { font-family: "JetBrains Mono", monospace; font-size: 0.66rem; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; }
     .node.root { background: linear-gradient(135deg, var(--brand), var(--sky)); border: 0; color: #fff; box-shadow: 0 20px 44px -18px rgba(79,70,229,.55); }
     .node.root .n-role { color: rgba(255,255,255,.85); }
@@ -174,6 +175,10 @@
     }
     .company.c-youcom { --c: var(--youcom); }
     .company.c-yousaas { --c: var(--yousaas); }
+    .company .badge img { width: 100%; height: 100%; object-fit: contain; display: block; }
+    .company.c-youcom .badge, .company.c-yousaas .badge {
+      background: #fff; border: 1px solid var(--line); padding: 9px; box-shadow: 0 10px 24px -14px var(--c);
+    }
     .company.soon .badge { background: var(--soft); color: var(--muted); border: 1px dashed var(--line-strong); box-shadow: none; }
     .company .tag { font-family: "JetBrains Mono", monospace; font-size: 0.72rem; font-weight: 500; color: var(--c); text-transform: uppercase; letter-spacing: .1em; margin-bottom: 12px; }
     .company.soon .tag { color: var(--muted); }
@@ -270,8 +275,8 @@
           </div>
           <div class="connector"></div>
           <div class="org-children">
-            <div class="child c-youcom"><div class="node"><span class="n-name">You'Com</span><span class="n-role">Entreprise</span></div></div>
-            <div class="child c-yousaas"><div class="node"><span class="n-name">You'SaaS</span><span class="n-role">Entreprise</span></div></div>
+            <div class="child c-youcom"><div class="node"><img class="node-logo" src="assets/youcom-logo.png" alt="" /><span class="n-name">You'Com</span><span class="n-role">Entreprise</span></div></div>
+            <div class="child c-yousaas"><div class="node"><img class="node-logo" src="assets/yousaas-logo.png" alt="" /><span class="n-name">You'SaaS</span><span class="n-role">Entreprise</span></div></div>
             <div class="child future"><div class="node"><span class="n-name">Demain +</span><span class="n-role">À venir</span></div></div>
           </div>
         </div>
@@ -305,7 +310,7 @@
         </div>
         <div class="companies">
           <a class="company c-youcom reveal" href="https://youcom.business" target="_blank" rel="noopener">
-            <div class="badge">Y</div>
+            <div class="badge"><img src="assets/youcom-logo.png" alt="Logo You'Com" /></div>
             <span class="tag">Studio B2B · Communication</span>
             <h3>You'Com</h3>
             <p>Le studio dédié à la communication, au SaaS et à la croissance des entreprises B2B. Des produits pensés pour être visibles, professionnels et efficaces.</p>
@@ -314,7 +319,7 @@
             </span>
           </a>
           <a class="company c-yousaas reveal" href="https://yousaas.business" target="_blank" rel="noopener">
-            <div class="badge">Y</div>
+            <div class="badge"><img src="assets/yousaas-logo.png" alt="Logo You'SaaS" /></div>
             <span class="tag">Studio SaaS · IA &amp; Automatisation</span>
             <h3>You'SaaS</h3>
             <p>Le studio logiciel du groupe : développement sur-mesure, IA et automatisation. Des applications SaaS modernes qui répondent à de vrais besoins métier.</p>
