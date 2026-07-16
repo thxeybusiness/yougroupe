@@ -80,8 +80,10 @@ header {
 }
 header.scrolled { border-bottom-color: var(--line); }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 66px; }
-.brand { font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; display: inline-flex; align-items: center; color: var(--ink); }
-.brand .brand-apos { height: 0.92em; width: auto; margin: 0 0.01em; align-self: flex-start; position: relative; top: 0.02em; }
+.brand { font-weight: 800; font-size: 1.3rem; letter-spacing: -.02em; display: inline-flex; align-items: center; gap: 9px; color: var(--ink); }
+.brand .brand-logo { width: 28px; height: 28px; flex: none; object-fit: contain; }
+.brand .brand-name { white-space: nowrap; }
+.brand .apos { color: inherit; }
 .nav-links { display: flex; align-items: center; gap: 34px; }
 .nav-links a.link { position: relative; color: var(--muted); font-size: 0.95rem; font-weight: 500; transition: color .2s; }
 .nav-links a.link:hover, .nav-links a.link.active { color: var(--ink); }
