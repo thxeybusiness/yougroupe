@@ -16,7 +16,7 @@
 <body>
   <header id="hdr">
     <div class="wrap nav">
-      <a class="brand" href="/">You<span class="apos">'</span>Groupe</a>
+      <a class="brand" href="/">You<img class="brand-apos" src="/assets/yougroupe-apos.png" alt="'" />Groupe</a>
       <nav class="nav-links" id="navlinks">
         <a class="link" href="/">Accueil</a>
         <a class="link" href="/entreprises.html">Nos entreprises</a>
@@ -39,32 +39,46 @@
       </div>
     </section>
 
-    <section class="block">
-      <div class="wrap-narrow">
-        <div class="contact-grid">
-          <div class="contact-card reveal">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
-            <h3>Email</h3>
-            <a href="mailto:contact@yougroupe.com">contact@yougroupe.com</a>
-          </div>
-          <div class="contact-card reveal">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-            <h3>Le groupe</h3>
-            <p>You'Com · You'SaaS<br />&amp; les entreprises de demain</p>
-          </div>
-          <div class="contact-card reveal">
-            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div>
-            <h3>Nos sites</h3>
-            <a href="https://youcom.business" target="_blank" rel="noopener">youcom.business</a><br />
-            <a href="https://yousaas.business" target="_blank" rel="noopener">yousaas.business</a>
-          </div>
-        </div>
+    <section class="block" style="padding-top:clamp(20px,3vw,44px)">
+      <div class="wrap">
+        <div class="contact-layout">
+          <aside class="contact-aside reveal">
+            <h2>Coordonnées</h2>
+            <p>Écrivez-nous directement ou via le formulaire — nous répondons vite.</p>
+            <div class="contact-list">
+              <div class="c-row">
+                <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></div>
+                <div><div class="c-label">Email</div><div class="c-val"><a href="mailto:contact@yougroupe.com">contact@yougroupe.com</a></div></div>
+              </div>
+              <div class="c-row">
+                <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg></div>
+                <div><div class="c-label">Nos sites</div><div class="c-val"><a href="https://youcom.business" target="_blank" rel="noopener">youcom.business</a> · <a href="https://yousaas.business" target="_blank" rel="noopener">yousaas.business</a></div></div>
+              </div>
+              <div class="c-row">
+                <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h.01M9 13h.01M9 17h.01M15 9h.01M15 13h.01M15 17h.01"/></svg></div>
+                <div><div class="c-label">Le groupe</div><div class="c-val">You'Com · You'SaaS<br />&amp; les entreprises de demain</div></div>
+              </div>
+            </div>
+          </aside>
 
-        <div class="cta-row reveal" style="margin-top:44px">
-          <a class="btn btn-primary" href="mailto:contact@yougroupe.com">Écrivez-nous
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4zM22 6l-10 7L2 6"/></svg>
-          </a>
-          <a class="btn btn-ghost" href="/entreprises.html">Voir nos entreprises</a>
+          <div class="form-card reveal">
+            <form id="contactForm" novalidate>
+              <div class="form-row two">
+                <div class="field"><label for="cf-nom">Nom</label><input id="cf-nom" name="nom" type="text" autocomplete="name" placeholder="Votre nom" required /></div>
+                <div class="field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" autocomplete="email" placeholder="vous@exemple.com" required /></div>
+              </div>
+              <div class="form-row">
+                <div class="field"><label for="cf-sujet">Sujet</label><input id="cf-sujet" name="sujet" type="text" placeholder="L'objet de votre message" /></div>
+              </div>
+              <div class="form-row">
+                <div class="field"><label for="cf-message">Message</label><textarea id="cf-message" name="message" placeholder="Décrivez votre projet ou votre question…" required></textarea></div>
+              </div>
+              <button class="btn btn-primary" type="submit">Envoyer le message
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+              </button>
+              <p class="form-note">Le formulaire ouvre votre messagerie. Vous pouvez aussi écrire à <a href="mailto:contact@yougroupe.com">contact@yougroupe.com</a>.</p>
+            </form>
+          </div>
         </div>
       </div>
     </section>
@@ -72,7 +86,7 @@
 
   <footer>
     <div class="wrap foot">
-      <a class="brand" href="/">You<span class="apos">'</span>Groupe</a>
+      <a class="brand" href="/">You<img class="brand-apos" src="/assets/yougroupe-apos.png" alt="'" />Groupe</a>
       <nav class="foot-links">
         <a href="/entreprises.html">Nos entreprises</a>
         <a href="/youcom.html">You'Com</a>

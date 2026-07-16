@@ -27,3 +27,16 @@ document.querySelectorAll('.reveal').forEach((el, i) => {
   el.style.transitionDelay = Math.min(i % 6, 5) * 55 + 'ms';
   io.observe(el);
 });
+
+// Contact form -> compose an email in the visitor's mail client (no backend)
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const val = (id) => (document.getElementById(id)?.value || '').trim();
+    const nom = val('cf-nom'), email = val('cf-email'), sujet = val('cf-sujet'), message = val('cf-message');
+    const subject = encodeURIComponent(sujet ? `${sujet} — ${nom}` : `Contact yougroupe.com — ${nom || 'Sans nom'}`);
+    const body = encodeURIComponent(`${message}\n\n— ${nom}\n${email}`);
+    window.location.href = `mailto:contact@yougroupe.com?subject=${subject}&body=${body}`;
+  });
+}
