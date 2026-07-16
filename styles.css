@@ -80,7 +80,9 @@ header {
 }
 header.scrolled { border-bottom-color: var(--line); }
 .nav { display: flex; align-items: center; justify-content: space-between; height: 70px; }
-.brand { font-weight: 800; font-size: 1.28rem; letter-spacing: -.03em; display: inline-flex; align-items: center; color: var(--ink); }
+.brand { font-weight: 800; font-size: 1.28rem; letter-spacing: -.03em; display: inline-flex; align-items: center; gap: 9px; color: var(--ink); }
+.brand::before { content: ""; width: 1.1em; height: 1.1em; flex: none; background: url('/assets/yougroupe-logo.png') center/contain no-repeat; }
+.brand .apos { color: inherit; }
 .nav-links { display: flex; align-items: center; gap: 32px; }
 .nav-links a.link { color: var(--muted); font-size: 0.95rem; font-weight: 500; transition: color .2s; }
 .nav-links a.link:hover, .nav-links a.link.active { color: var(--ink); }
